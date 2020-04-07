@@ -1,0 +1,38 @@
+public class Solution {
+    public int[] maxset(int[] A) {
+        int a=0;
+        int max=0,sum=0,st=0,var=0;
+        for(int i=0; i<=A.length-1; i++)
+        {
+            if(A[i] > 0)
+            {
+                sum += A[i];
+                var++;
+            }
+            else
+            {
+            if(sum>max)
+            max=sum;
+            st=i-var;
+            var=0;
+            sum=0;
+            a=1;
+            }
+            
+        }
+        if (a==0)
+            {
+                max=sum;
+            st=0;
+            var=A.length;
+            }
+        //int st=a-max-1;
+        //System.out.println(st,max);
+        int ar[]=new int[var+1];
+        for(int i=0;i<=var;i++,st++)
+        {
+            ar[i]=A[st];
+        }
+        return ar;
+    }
+}
