@@ -1,0 +1,70 @@
+public class Solution {
+    public int[] plusOne(int[] A) {
+        
+        int D[]=new int[]{1,0};
+        if(A.length == 1 && A[0]==9)
+        return D;
+        int a=A.length-1;
+        A[a]++;
+        while(true)
+        {
+            
+            if(A[a]>9)
+            {
+                if(A[0]==10)
+            break;
+                A[a-1]++;
+                A[a]=0;
+            }
+            else
+            break;
+            a--;
+        }
+        int i=0,b=A.length-1,c=0,az=0;
+        if(A[i]==0)
+        {
+            
+    
+        while(true)
+        {
+            if(A[i] == 0)
+            {
+                az++;
+                while(c!=b)
+                {
+                    A[c]=A[c+1];
+                    
+                    c++;
+                }
+                b--;
+                //i++;
+                c=0;
+            }
+            else
+            break;
+        }
+        int B[]=new int[A.length-az];
+        for(int v=0;v<B.length;v++)
+        {
+            B[v]=A[v];
+        }
+        return B;
+        }
+        int C[]=new int[A.length+1];
+    if(A[0]==10)
+    {
+        C[0]=1;
+        C[1]=0;
+        if(C.length>2)
+        {
+        for(int v=2;v<C.length;v++)
+        {
+            C[v]=A[v-1];
+        }
+        
+        }
+        return C;
+    }
+        return A;
+    }
+}
