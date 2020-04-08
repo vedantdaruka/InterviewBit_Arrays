@@ -1,0 +1,21 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public long[] repeatedNumber(final int[] A) {
+        long ssa=0,ssn=0,sa=0,sn=0;
+        for(int i=0;i<A.length;i++)
+        {
+            sa+=A[i];
+            ssa+=(A[i]*A[i]);
+        }
+        sn=(A.length*(A.length+1))/2;
+        ssn=(A.length*(A.length+1)*((2*A.length)+1)/6);
+        long adb=sa-sn;
+        long asb=((ssa-ssn)/adb);
+        long a=(adb+asb)/2;
+        long b=asb-a;
+        long []ar=new long[2];
+        ar[0]=a;
+        ar[1]=b;
+        return ar;
+    }
+}
