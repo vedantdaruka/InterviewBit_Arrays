@@ -1,0 +1,22 @@
+public class Solution {
+    public int maxArr(int[] A) {
+        int S[]=new int[(A.length*A.length)];
+        int a=0,sa=0;
+        for(int i=0;i<A.length;i++)
+        {
+            for(int j=i+1;j<A.length;j++)
+            {
+                S[a]=Math.abs(A[i] - A[j]) + Math.abs(i - j);
+                sa++;
+                a++;
+            }
+        }
+        int as=0;
+        for(int i=0;i<sa;i++)
+        {
+            if(S[i]>as)
+            as=S[i];
+        }
+        return as;
+    }
+}
