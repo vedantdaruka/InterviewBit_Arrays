@@ -1,0 +1,52 @@
+public class Solution {
+    public int[][] generateMatrix(int A) {
+        int n=A;
+        int i=0,j=-1;
+        int ar[][] = new int[n][n];
+        int v,c=1;
+        while(n!=0)
+        {
+        v=n;
+        while(v!=0)
+        {
+            j++;
+            ar[i][j]=c;
+            c++;
+            
+            v--;
+        }
+        v=--n;
+        if(n==0)
+        break;
+        while(v!=0)
+        {
+            i++;
+            ar[i][j]=c;
+            c++;
+            v--;
+        }
+        v=n;
+        if(n==0)
+        break;
+        while(v!=0)
+        {
+            j--;
+            ar[i][j]=c;
+            c++;
+            v--;
+        }
+        v=--n;
+        if(n==0)
+        break;
+        while(v!=0)
+        {
+            i--;
+            ar[i][j]=c;
+            c++;
+            v--;
+        }
+        }
+        return ar;
+        
+    }
+}
